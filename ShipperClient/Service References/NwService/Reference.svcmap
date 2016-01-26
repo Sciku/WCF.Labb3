@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e1bb0480-a5d5-4259-881c-59b8ca8367ac" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8608/ShipperService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ShipperService.xsd" MetadataType="Schema" ID="eb1bfa23-fc9d-4cb1-9dcb-b2d42e12f5a4" SourceId="1" SourceUrl="http://localhost:8608/ShipperService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ShipperService.disco" MetadataType="Disco" ID="51ea6644-0619-4fce-81dc-8c6abd8bfd5d" SourceId="1" SourceUrl="http://localhost:8608/ShipperService.svc?disco" />
+    <MetadataFile FileName="ShipperService.wsdl" MetadataType="Wsdl" ID="e6e58905-4abb-4e80-9709-784300724fc7" SourceId="1" SourceUrl="http://localhost:8608/ShipperService.svc?wsdl" />
+    <MetadataFile FileName="ShipperService1.xsd" MetadataType="Schema" ID="e4f4cd8a-9927-4e39-9cf4-567a12e7ac22" SourceId="1" SourceUrl="http://localhost:8608/ShipperService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ShipperService2.xsd" MetadataType="Schema" ID="3ae5114f-5740-4075-8a0b-61987efe73ba" SourceId="1" SourceUrl="http://localhost:8608/ShipperService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
