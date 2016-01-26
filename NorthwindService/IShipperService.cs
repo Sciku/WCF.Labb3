@@ -22,7 +22,7 @@ namespace NorthwindService
     public class Shipper
     {
         [DataMember]
-        int ShipperID { get; set; }
+        public int ShipperID { get; set; }
 
         [DataMember]
         public string CompanyName { get; set; }
