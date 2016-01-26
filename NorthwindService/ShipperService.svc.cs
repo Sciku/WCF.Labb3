@@ -15,15 +15,15 @@ namespace NorthwindService
     public class ShipperService : IShipperService
     {
         private string connectionString = ConfigurationManager.ConnectionStrings["theDB"].ToString();
+        Shipper shipper = new Shipper();
         public Shipper GetShipperByID(int ShipperId)
         {
-            string query = "SELECT [ShipperID], [CompanyName], [Phone]FROM [NORTHWND].[dbo].[Shippers]" +
+            string getQuery = "SELECT [ShipperID], [CompanyName], [Phone]FROM [NORTHWND].[dbo].[Shippers]" +
                 "WHERE [ShipperID] = " + ShipperId;
-            var shipper = new Shipper();
-
+            
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand command = new SqlCommand(query, connection);
+                SqlCommand command = new SqlCommand(getQuery, connection);
                 connection.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -39,9 +39,29 @@ namespace NorthwindService
 
         }
 
-        public Shipper SaveShipper(int ShipperID, string CompanyName, string Phone)
+        public int SaveShipper(int shipperID, string companyName, string phone)
         {
-            throw new NotImplementedException();
+            string updateQuery = "UPDATE [NORTHWND].[dbo].[Shippers] SET" + 
+                " companyName = @CompanyName,"+
+                " phone = @Phone" +
+                " WHERE shipperID = @ShipperID"; 
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                
+                SqlCommand cmd = new SqlCommand(updateQuery, connection);
+
+                SqlParameter paramShipperID = new SqlParameter("@ShipperID", shipperID);
+                cmd.Parameters.Add(paramShipperID);
+
+                SqlParameter paramCompanyName = new SqlParameter("@CompanyName", companyName);
+                cmd.Parameters.Add(paramCompanyName);
+
+                SqlParameter paramPhone = new SqlParameter("@Phone", phone);
+                cmd.Parameters.Add(paramPhone);
+       
+                connection.Open();
+                return cmd.ExecuteNonQuery();
+            }
         }
     }
 }
